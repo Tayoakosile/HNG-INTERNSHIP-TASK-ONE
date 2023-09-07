@@ -1,6 +1,9 @@
 {
   "name": "stage-one",
   "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT"
+  "main": "index.mjs",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.mjs"
+  }
 }
