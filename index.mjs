@@ -23,17 +23,17 @@ const server = http.createServer((req, res) => {
       "Friday",
       "Saturday",
     ];
-    console.log(url);
+    console.log(date.toJSON().split('.'));
 
     const data = {
-      slack_name: url.searchParams?.get("slack_name") ?? "Tayo Akosile",
+      slack_name: url.searchParams?.get("slack_name"),
       current_day: daysOfTheWeek[date.getDay()],
-      utc_time: "2023-08-21T15:04:05Z",
-      track: url.searchParams?.get("track") ?? "backend",
+      // utc_time: "2023-08-21T15:04:05Z",
+      utc_time: date.toJSON().split('.')[0] + 'Z',
+      track: url.searchParams?.get("track"),
       github_file_url:
-        "https://github.com/username/repo/blob/main/file_name.ext",
-      github_repo_url: "https://github.com/username/repo",
-      //  “status_code”: 200
+        "https://github.com/Tayoakosile/HNG-INTERNSHIP-TASK-ONE/blob/master/index.mjs",
+      github_repo_url: "https://github.com/Tayoakosile/HNG-INTERNSHIP-TASK-ONE",
     };
     return res.end(JSON.stringify(data));
   }
