@@ -1,6 +1,6 @@
 import http from "http";
 
-const port = process.env?.PORT || 4081;
+const port = process.env?.PORT || 3000;
 
 const hostname = "127.0.0.1";
 
@@ -10,9 +10,9 @@ const server = http.createServer((req, res) => {
   res.statusCode = 200;
 
   if (req.url?.includes("/api")) {
+    const date = new Date();
     const url = new URL(req.url, `http://${req.headers.host}`);
 
-    const date = new Date();
     const daysOfTheWeek = [
       "Sunday",
       "Monday",
