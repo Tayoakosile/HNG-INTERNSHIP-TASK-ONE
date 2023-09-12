@@ -29,6 +29,7 @@ const server = http.createServer((req, res) => {
 
       utc_time: date.toJSON().split(".")[0] + "Z",
       track: url.searchParams?.get("track"),
+      date,
       github_file_url:
         "https://github.com/Tayoakosile/HNG-INTERNSHIP-TASK-ONE/blob/master/index.mjs",
       github_repo_url: "https://github.com/Tayoakosile/HNG-INTERNSHIP-TASK-ONE",
